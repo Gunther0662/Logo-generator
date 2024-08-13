@@ -14,7 +14,9 @@ How you can install the application and produce your own logo name by first inst
 
 ## Usage
 
-GitHub: 
+GitHub: https://github.com/Gunther0662/Logo-generator 
+
+Video
 
 ## Credits
 
