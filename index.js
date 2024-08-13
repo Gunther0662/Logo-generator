@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Shapes } = require('./lib/shapes');
+const {Circle, Square, Triangle} = require('./lib/shapes');
 
 const questions = [
     {
@@ -11,7 +11,7 @@ const questions = [
 
     {
         type: 'input',
-        name: 'text color',
+        name: 'name',
         message: 'What color in the text of your Logo?',
     },
 
@@ -19,7 +19,7 @@ const questions = [
         type: 'list',
         message: 'What shape do you want your Logo?',
         name: 'shape',
-        choices: ['Circle', 'triangle', 'square'],
+        choices: ['Circle', 'Square', 'Triangle'],
     },
 
     {
@@ -33,7 +33,8 @@ class SVG {
     constructor() {
         this.name = '',
         this.shape = '',
-    }
+    };
+}
 render() {
     <svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">${shape} ${name}</svg>
 }
@@ -43,7 +44,6 @@ setText(name) {
 setShape(shape) {
     this.shape = shape.render
 }
-}
 function init() {
-    inquirer
+    inquirer.prompt
 }
