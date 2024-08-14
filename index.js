@@ -31,19 +31,25 @@ const questions = [
 
 class SVG {
     constructor() {
-        this.name = '',
-        this.shape = '',
+        this.textElement = ''
+            this.shapeElement = ''
+    }
+
+    render() {
+        `<svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">${this.shapeElement} ${this.textElement}</svg>`
     };
-}
-render() {
-    <svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">${shape} ${name}</svg>
-}
-setText(name) {
-    this.name = <text x="100" y="100" font-weight="bold" text-anchor="middle">${name}${color}</text>
-} 
-setShape(shape) {
-    this.shape = shape.render
-}
+
+    setText(text, color) {
+        this.textElemnet = `<text x="100" y="100" font-weight="bold" text-anchor="middle">${text}${color}</text>`
+    };
+
+    setShape(shape) {
+        this.shapeElement = shape.render()
+    };
+};
+
 function init() {
-    inquirer.prompt
+    inquirer.prompt(questions)
+    .then
+    
 }
