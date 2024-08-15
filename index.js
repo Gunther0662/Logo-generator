@@ -2,33 +2,39 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const {Circle, Square, Triangle} = require('./lib/shapes');
 
-const questions = [
-    {
-        type: 'input',
-        name: 'Logo name',
-        message: 'What is the name of your Logo?', 
-    },
-
-    {
-        type: 'input',
-        name: 'name',
-        message: 'What color in the text of your Logo?',
-    },
-
-    {
-        type: 'list',
-        message: 'What shape do you want your Logo?',
-        name: 'shape',
-        choices: ['Circle', 'Square', 'Triangle'],
-    },
-
-    {
-        type: 'input',
-        name: 'shapecolor',
-        message: 'What is the color of the shape of your Logo?',
-    },
-];
-
+class Cli {
+    run(){
+        return inquirer.prompt([    
+        {
+            type: 'input',
+            name: 'logo',
+            message: 'What is the name of your Logo?', 
+        },
+    
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What color in the text of yor Logo?',
+        },
+    
+        {
+            type: 'list',
+            message: 'What shape do you want your Logo?',
+            name: 'shape',
+            choices: ['Circle', 'Square', 'Triangle'],
+        },
+    
+        {
+            type: 'input',
+            name: 'shapecolor',
+            message: 'What is the color of the shape of your Logo?',
+        },
+    ])
+    .then (({logo, name, shape, shapecolor }) => {
+        
+    })
+    }
+}
 class SVG {
     constructor() {
         this.textElement = ''
@@ -47,9 +53,3 @@ class SVG {
         this.shapeElement = shape.render()
     };
 };
-
-function init() {
-    inquirer.prompt(questions)
-    .then
-    
-}
